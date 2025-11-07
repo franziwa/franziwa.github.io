@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio von Franziska Warncke - Software Developer mit Fokus auf Umwelt- und Tierschutz. Nachhaltige digitale Lösungen für eine bessere Welt.">
+    <title>Franziska Warncke - Software Developer & Umweltschützerin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --earth-green: #2d5016;
+            --leaf-green: #4a7c2c;
+            --light-green: #7cb342;
+            --sky-blue: #87ceeb;
+            --earth-brown: #8b7355;
+            --cream: #f5f5dc;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, var(--cream) 0%, #e8f5e9 100%);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--earth-green) 0%, var(--leaf-green) 100%);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            bottom: -50px;
+            left: -50px;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: pulse 6s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% { 
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .header-content h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            animation: slideIn 0.8s ease-out;
+            font-weight: 700;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            margin-bottom: 1rem;
+        }
+
+        .eco-badges {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .eco-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.15);
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .eco-badge:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        nav {
+            background: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--earth-green);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--light-green);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background: var(--white);
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: var(--earth-green);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-text {
+            line-height: 1.8;
+        }
+
+        .values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .value-card {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+            border-radius: 10px;
+            border-left: 4px solid var(--leaf-green);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .value-card h3 {
+            color: var(--earth-green);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, var(--leaf-green) 0%, var(--light-green) 100%);
+            color: white;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            transition: transform 0.3s;
+            cursor: default;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.05);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .project-card {
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            background: white;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border-color: var(--leaf-green);
+        }
+
+        .project-card h3 {
+            color: var(--earth-green);
+            margin-bottom: 1rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: #e8f5e9;
+            color: var(--earth-green);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+
+        .eco-tag {
+            background: var(--light-green);
+            color: white;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-card {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f1f8e9 0%, #e8f5e9 100%);
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: scale(1.05);
+        }
+
+        .contact-card a {
+            color: var(--earth-green);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer {
+            background: var(--earth-green);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .co2-info {
+            background: linear-gradient(135deg, #e3f2fd 0%, #e8f5e9 100%);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+
+            .header-content h1 {
+                font-size: 2rem;
+            }
+
+            .header-subtitle {
+                font-size: 1rem;
+            }
+
+            header {
+                padding: 3rem 1rem;
+            }
+
+            .eco-badges {
+                gap: 0.5rem;
+            }
+
+            .eco-badge {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Franziska Warncke</h1>
+            <p class="header-subtitle">Software Developer • Umweltschützerin • Tierfreundin</p>
+            <div class="eco-badges">
+                <div class="eco-badge" role="text">
+                    <span>🌱</span>
+                    <span>Green Coding</span>
+                </div>
+                <div class="eco-badge" role="text">
+                    <span>🐾</span>
+                    <span>Tierschutz</span>
+                </div>
+                <div class="eco-badge" role="text">
+                    <span>♻️</span>
+                    <span>Nachhaltigkeit</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav aria-label="Hauptnavigation">
+        <ul>
+            <li><a href="#about">Über Mich</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projekte</a></li>
+            <li><a href="#values">Werte</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section id="about" aria-labelledby="about-heading">
+            <h2 id="about-heading">🌿 Über Mich</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Hallo! Ich bin ein leidenschaftlicher Software Developer, der Technologie mit Umwelt- und Tierschutz verbindet. Meine Mission ist es, nachhaltige digitale Lösungen zu entwickeln, die einen positiven Impact auf unseren Planeten haben.</p>
+                    <p style="margin-top: 1rem;">Ich glaube daran, dass Code mehr kann als nur Probleme lösen – er kann die Welt verändern. Von energieeffizienten Algorithmen bis hin zu Anwendungen, die Menschen für den Umweltschutz begeistern.</p>
+                </div>
+                <div>
+                    <div class="co2-info">
+                        <strong>🌱 Nachhaltiges Web-Design</strong><br>
+                        Diese Website ist für minimalen CO₂-Fußabdruck optimiert: Effizienter Code, keine schweren Frameworks, schnelle Ladezeiten.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" aria-labelledby="skills-heading">
+            <h2 id="skills-heading">💻 Technische Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-tag">JavaScript</div>
+                <div class="skill-tag">Python</div>
+                <div class="skill-tag">React</div>
+                <div class="skill-tag">Node.js</div>
+                <div class="skill-tag">Git</div>
+                <div class="skill-tag">HTML/CSS</div>
+                <div class="skill-tag">SQL</div>
+                <div class="skill-tag">Docker</div>
+                <div class="skill-tag">TypeScript</div>
+                <div class="skill-tag">REST APIs</div>
+            </div>
+        </section>
+
+        <section id="projects" aria-labelledby="projects-heading">
+            <h2 id="projects-heading">🚀 Projekte</h2>
+            <div class="project-grid">
+                <article class="project-card">
+                    <h3>🌳 CO₂ Tracker App</h3>
+                    <p>Eine Web-App zur Berechnung und Verfolgung des persönlichen CO₂-Fußabdrucks mit Tipps zur Reduzierung.</p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag eco-tag">♻️ Umwelt</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <h3>🐾 Tierschutz Portal</h3>
+                    <p>Plattform zur Vermittlung von Tieren aus dem Tierschutz mit Matching-Algorithmus für optimale Vermittlung.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Django</span>
+                        <span class="tag eco-tag">🐕 Tierschutz</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <h3>🌍 Nachhaltigkeits-Dashboard</h3>
+                    <p>Dashboard zur Visualisierung von Umweltdaten und nachhaltigen Initiativen in der Region.</p>
+                    <div class="project-tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">D3.js</span>
+                        <span class="tag eco-tag">♻️ Umwelt</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="values" aria-labelledby="values-heading">
+            <h2 id="values-heading">💚 Meine Werte</h2>
+            <div class="values">
+                <div class="value-card">
+                    <h3>🌱 Nachhaltigkeit</h3>
+                    <p>Ich entwickle energieeffiziente Software und achte auf Green Coding Prinzipien. Weniger ist mehr – auch im Code.</p>
+                </div>
+                <div class="value-card">
+                    <h3>🐾 Tierschutz</h3>
+                    <p>Tiere haben keine Stimme, aber wir können sie schützen. Ich unterstütze aktiv Tierschutzorganisationen und entwickle Tools für den Tierschutz.</p>
+                </div>
+                <div class="value-card">
+                    <h3>🌍 Klimaschutz</h3>
+                    <p>Der Klimawandel ist real. Jede Zeile Code, die ich schreibe, berücksichtigt den ökologischen Fußabdruck.</p>
+                </div>
+                <div class="value-card">
+                    <h3>🤝 Open Source</h3>
+                    <p>Wissen teilen, gemeinsam wachsen. Ich glaube an die Kraft der Open-Source-Community für positive Veränderungen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">📬 Kontakt</h2>
+            <p>Lass uns zusammen an einer nachhaltigeren Zukunft arbeiten!</p>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;" aria-hidden="true">📧</div>
+                    <a href="mailto:deine@email.de" aria-label="E-Mail an deine@email.de senden">deine@email.de</a>
+                </div>
+                <div class="contact-card">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;" aria-hidden="true">💼</div>
+                    <a href="https://github.com/deinusername" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profil besuchen (öffnet in neuem Tab)">GitHub</a>
+                </div>
+                <div class="contact-card">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;" aria-hidden="true">🔗</div>
+                    <a href="https://linkedin.com/in/deinprofil" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profil besuchen (öffnet in neuem Tab)">LinkedIn</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Franziska Warncke • Made with 💚 for the Planet</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">🌱 Diese Website ist CO₂-optimiert und verwendet keine Tracking-Cookies</p>
+    </footer>
+</body>
+</html>
